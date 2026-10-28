@@ -1,0 +1,123 @@
+{
+  "embedder": "hashing-256 (lexical, non-semantic)",
+  "is_semantic": false,
+  "baseline": {
+    "n_answerable": 17,
+    "recall@k": {
+      "@1": 1.0,
+      "@3": 1.0,
+      "@5": 1.0
+    },
+    "mrr": 1.0,
+    "multi_page_coverage@5": 1.0,
+    "recall@3_by_type": {
+      "lexical": 1.0,
+      "paraphrase": 1.0,
+      "multi_page": 1.0
+    },
+    "retrieval_latency_ms": {
+      "median": 7.8,
+      "p95": 10.3
+    },
+    "ingest_seconds": 0.06,
+    "best_similarity": {
+      "q01": 0.12403476238250732,
+      "q02": 0.12403476238250732,
+      "q03": 0.19626712799072266,
+      "q04": 0.1406421661376953,
+      "q05": 0.13679718971252441,
+      "q06": 0.20640629529953003,
+      "q07": 0.19749236106872559,
+      "q08": 0.22750788927078247,
+      "q09": 0.18200629949569702,
+      "q10": 0.1557523012161255,
+      "q11": 0.18314749002456665,
+      "q12": 0.30151140689849854,
+      "q13": 0.26997464895248413,
+      "q14": 0.15974462032318115,
+      "q15": 0.1735851764678955,
+      "q16": 0.12810254096984863,
+      "q17": 0.18314749002456665,
+      "u01": 0.08247864246368408,
+      "u02": 0.07924288511276245,
+      "u03": 0.10383486747741699,
+      "u04": 0.07259541749954224,
+      "u05": 0.05923491716384888
+    }
+  },
+  "sweeps": {
+    "chunk_size": [
+      {
+        "chunk_size": 300,
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "mrr": 1.0
+      },
+      {
+        "chunk_size": 600,
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "mrr": 1.0
+      },
+      {
+        "chunk_size": 900,
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "mrr": 1.0
+      },
+      {
+        "chunk_size": 1500,
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "mrr": 1.0
+      }
+    ],
+    "hybrid": [
+      {
+        "use_hybrid": false,
+        "recall@1": 0.882,
+        "recall@3": 1.0,
+        "mrr": 0.941
+      },
+      {
+        "use_hybrid": true,
+        "recall@1": 1.0,
+        "recall@3": 1.0,
+        "mrr": 1.0
+      }
+    ],
+    "dedupe_and_page_cap": []
+  },
+  "abstention": [
+    {
+      "threshold": 0.0,
+      "false_abstain_rate": 0.0,
+      "correct_abstain_rate": 0.0
+    },
+    {
+      "threshold": 0.1,
+      "false_abstain_rate": 0.0,
+      "correct_abstain_rate": 0.8
+    },
+    {
+      "threshold": 0.2,
+      "false_abstain_rate": 0.765,
+      "correct_abstain_rate": 1.0
+    },
+    {
+      "threshold": 0.3,
+      "false_abstain_rate": 0.941,
+      "correct_abstain_rate": 1.0
+    },
+    {
+      "threshold": 0.4,
+      "false_abstain_rate": 1.0,
+      "correct_abstain_rate": 1.0
+    },
+    {
+      "threshold": 0.5,
+      "false_abstain_rate": 1.0,
+      "correct_abstain_rate": 1.0
+    }
+  ]
+}

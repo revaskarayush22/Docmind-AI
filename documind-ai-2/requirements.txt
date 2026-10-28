@@ -1,0 +1,15 @@
+# Runtime dependencies (compatible-release ranges). Versions marked "tested" were the ones
+# the test suite passed on in development (Python 3.13); sentence-transformers/torch could
+# NOT be installed or run in that environment - see README "Verification status".
+
+# Prefer the small CPU-only PyTorch wheels (avoids multi-GB CUDA downloads on hosting platforms).
+--extra-index-url https://download.pytorch.org/whl/cpu
+
+streamlit>=1.46,<2            # tested 1.66.1 (st.badge needs >=1.46)
+pymupdf>=1.24.3,<3            # tested 2.0
+chromadb>=1.0,<2              # tested 1.5.9
+google-genai>=1.0,<3          # tested 2.31.0 (current Google Gen AI SDK; google-generativeai is deprecated)
+sentence-transformers>=3,<7   # not installed in the dev sandbox (UNVERIFIED here)
+pydantic>=2.7,<3              # tested 2.14.1
+python-dotenv>=1.0,<2         # tested 1.2.4
+numpy>=1.26

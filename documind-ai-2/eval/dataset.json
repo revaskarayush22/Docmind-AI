@@ -1,0 +1,44 @@
+{
+  "description": "Small synthetic dataset (3 documents, 9 pages) written for DocuMind AI evaluation. All facts are invented. It is a smoke-level benchmark, not a statistically meaningful one.",
+  "documents": {
+    "solar_handbook.pdf": [
+      "Photovoltaic panels convert sunlight directly into electricity using semiconductor cells. A typical residential panel has an efficiency of about 20 percent, and most manufacturers provide a performance warranty of 25 years. Silicon is the most widely used cell material.",
+      "Installation requires a roof that faces south in the northern hemisphere, with a tilt angle roughly equal to the local latitude. Shading from trees or chimneys can reduce output by up to 40 percent. An inverter converts the direct current from the panels into alternating current for household use.",
+      "Maintenance is minimal. Panels should be cleaned twice a year and inspected after storms. The inverter usually needs replacement after 10 to 15 years. Battery storage adds roughly 8000 dollars to the cost of a typical home system but allows use of solar power at night."
+    ],
+    "remote_work_policy.pdf": [
+      "Employees may work remotely up to three days per week with manager approval. Core collaboration hours are 10:00 to 15:00 in the employee's local time zone. All remote staff must use the company VPN when accessing internal systems.",
+      "The company provides a home office stipend of 600 dollars once per calendar year for a desk, chair or monitor. Internet reimbursement is capped at 50 dollars per month. Equipment purchased with the stipend remains company property for two years.",
+      "Remote employees must complete security awareness training every six months. Lost or stolen devices must be reported to the IT helpdesk within 24 hours. Violations of the data protection rules may lead to disciplinary action, up to termination."
+    ],
+    "coral_reef_report.pdf": [
+      "Coral reefs cover less than one percent of the ocean floor but support about 25 percent of all marine species. The Great Barrier Reef stretches over 2300 kilometres along the coast of Queensland, Australia.",
+      "Coral bleaching occurs when water temperatures rise by one to two degrees Celsius above normal for several weeks, causing corals to expel the symbiotic algae called zooxanthellae. Bleached corals are not dead but are under severe stress.",
+      "Conservation measures include marine protected areas, reducing nutrient runoff from farms and restoring damaged reefs through coral gardening. The report estimates that restoration projects cost between 10000 and 40000 dollars per hectare."
+    ]
+  },
+  "questions": [
+    {"id": "q01", "type": "lexical", "question": "What is the typical efficiency of a residential solar panel?", "relevant": [["solar_handbook.pdf", 1]], "answer_contains_any": ["20 percent", "20%"]},
+    {"id": "q02", "type": "lexical", "question": "How long is the performance warranty for solar panels?", "relevant": [["solar_handbook.pdf", 1]], "answer_contains_any": ["25 years", "25-year"]},
+    {"id": "q03", "type": "lexical", "question": "By how much can shading reduce solar panel output?", "relevant": [["solar_handbook.pdf", 2]], "answer_contains_any": ["40 percent", "40%"]},
+    {"id": "q04", "type": "lexical", "question": "How often should solar panels be cleaned?", "relevant": [["solar_handbook.pdf", 3]], "answer_contains_any": ["twice a year", "two times a year", "twice per year"]},
+    {"id": "q05", "type": "paraphrase", "question": "Which roof direction works best for a solar installation in the northern hemisphere?", "relevant": [["solar_handbook.pdf", 2]], "answer_contains_any": ["south"]},
+    {"id": "q06", "type": "lexical", "question": "How many days a week can employees work remotely?", "relevant": [["remote_work_policy.pdf", 1]], "answer_contains_any": ["three days", "3 days"]},
+    {"id": "q07", "type": "paraphrase", "question": "During which hours must remote staff be available for teamwork?", "relevant": [["remote_work_policy.pdf", 1]], "answer_contains_any": ["10:00", "10 am", "10am"]},
+    {"id": "q08", "type": "lexical", "question": "How much is the home office stipend?", "relevant": [["remote_work_policy.pdf", 2]], "answer_contains_any": ["600"]},
+    {"id": "q09", "type": "lexical", "question": "What is the monthly cap on internet reimbursement?", "relevant": [["remote_work_policy.pdf", 2]], "answer_contains_any": ["50 dollars", "$50"]},
+    {"id": "q10", "type": "paraphrase", "question": "How quickly must a stolen laptop be reported?", "relevant": [["remote_work_policy.pdf", 3]], "answer_contains_any": ["24 hours"]},
+    {"id": "q11", "type": "lexical", "question": "How frequently is security awareness training required?", "relevant": [["remote_work_policy.pdf", 3]], "answer_contains_any": ["six months", "6 months"]},
+    {"id": "q12", "type": "lexical", "question": "What percentage of marine species do coral reefs support?", "relevant": [["coral_reef_report.pdf", 1]], "answer_contains_any": ["25 percent", "25%"]},
+    {"id": "q13", "type": "lexical", "question": "How long is the Great Barrier Reef?", "relevant": [["coral_reef_report.pdf", 1]], "answer_contains_any": ["2300"]},
+    {"id": "q14", "type": "paraphrase", "question": "Why do corals turn white during heat waves?", "relevant": [["coral_reef_report.pdf", 2]], "answer_contains_any": ["zooxanthellae", "algae"]},
+    {"id": "q15", "type": "lexical", "question": "What is the cost per hectare of reef restoration?", "relevant": [["coral_reef_report.pdf", 3]], "answer_contains_any": ["10000", "10,000"]},
+    {"id": "q16", "type": "multi_page", "question": "How do shading and the inverter affect a solar power system over time?", "relevant": [["solar_handbook.pdf", 2], ["solar_handbook.pdf", 3]], "answer_contains_any": ["40 percent", "10 to 15"]},
+    {"id": "q17", "type": "multi_page", "question": "What security obligations apply to remote employees?", "relevant": [["remote_work_policy.pdf", 1], ["remote_work_policy.pdf", 3]], "answer_contains_any": ["VPN", "training"]},
+    {"id": "u01", "type": "unanswerable_unrelated", "question": "What is the capital of Australia?", "relevant": []},
+    {"id": "u02", "type": "unanswerable_related", "question": "How many vacation days do employees receive per year?", "relevant": []},
+    {"id": "u03", "type": "unanswerable_related", "question": "What is the price of a Tesla Powerwall battery?", "relevant": []},
+    {"id": "u04", "type": "unanswerable_unrelated", "question": "Who won the football world cup in 1998?", "relevant": []},
+    {"id": "u05", "type": "unanswerable_related", "question": "What is the dress code in the office?", "relevant": []}
+  ]
+}
